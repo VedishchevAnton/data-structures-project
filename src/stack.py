@@ -16,7 +16,8 @@ class Stack:
 
     def __init__(self):
         """Конструктор класса Stack"""
-        pass
+        self.top = None
+        self.stack_list = []
 
     def push(self, data):
         """
