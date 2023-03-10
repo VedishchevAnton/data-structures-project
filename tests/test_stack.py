@@ -23,3 +23,14 @@ class TestStack(unittest.TestCase):
         stack.push("test")
         self.assertEqual(stack.top.data, "test")
 
+    def test_pop(self):
+        """
+        Тест для удаления элемента c вершины стека
+        """
+        stack = Stack()
+        stack.push("test")
+        self.assertEqual(stack.top.data, "test")
+        stack.pop()
+
+
+
