@@ -13,3 +13,13 @@ class TestStack(unittest.TestCase):
         """
         stack = Stack()
         self.assertIsNone(stack.top)
+
+    def test_push(self):
+        """
+        Тест для добавления элемента на вершину стека.
+        """
+        stack = Stack()
+        self.assertIsNone(stack.top)
+        stack.push("test")
+        self.assertEqual(stack.top.data, "test")
+
