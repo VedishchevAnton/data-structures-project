@@ -31,11 +31,11 @@ class Stack:
             node.next_node = self.top
         self.top = node
 
-
     def pop(self):
         """
         Метод для удаления элемента с вершины стека и его возвращения
 
         :return: данные удаленного элемента
         """
-        pass
+        return self.stack_list.pop()
+
