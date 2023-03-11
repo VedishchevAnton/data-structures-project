@@ -1,3 +1,6 @@
+from typing import Any
+
+
 class Node:
     """Класс для узла стека"""
 
@@ -16,8 +19,7 @@ class Stack:
 
     def __init__(self):
         """Конструктор класса Stack"""
-        self.top = None
-        self.stack_list = []
+        self.top: Node | None = None
 
     def push(self, data):
         """
@@ -25,11 +27,7 @@ class Stack:
 
         :param data: данные, которые будут добавлены на вершину стека
         """
-        node = Node(data, self.top)
-        self.stack_list.append(data)
-        if self.top:
-            node.next_node = self.top
-        self.top = node
+        self.top = Node(data, self.top)
 
     def pop(self):
         """
@@ -37,5 +35,6 @@ class Stack:
 
         :return: данные удаленного элемента
         """
-        return self.stack_list.pop()
-
+        prev_top = self.top
+        self.top = self.top.next_node
+        return prev_top
