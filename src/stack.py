@@ -4,7 +4,7 @@ from typing import Any
 class Node:
     """Класс для узла стека"""
 
-    def __init__(self, data, next_node):
+    def __init__(self, data, next_node=None):
         """
         Конструктор класса Node
 
@@ -17,24 +17,22 @@ class Node:
 class Stack:
     """Класс для стека"""
 
-    def __init__(self):
+    def __init__(self, top=None):
         """Конструктор класса Stack"""
-        self.top: Node | None = None
+        self.top = top
 
     def push(self, data):
         """
-        Метод для добавления элемента на вершину стека
-
-        :param data: данные, которые будут добавлены на вершину стека
+        Метод для последовательного добавления данных в стэк
         """
-        self.top = Node(data, self.top)
+        new_node = Node(data)
+        new_node.next_node = self.top
+        self.top = new_node
 
     def pop(self):
         """
-        Метод для удаления элемента с вершины стека и его возвращения
-
-        :return: данные удаленного элемента
+        Метод для последовательного удаления данных из стэка
         """
-        prev_top = self.top
+        remove_last = self.top
         self.top = self.top.next_node
-        return prev_top
+        return remove_last.data
