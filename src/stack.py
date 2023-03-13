@@ -1,6 +1,11 @@
 from typing import Any
 
 
+# Push — Вставляет элемент в стек сверху
+# Pop — Возвращает верхний элемент после того, как удалит его из стека
+# isEmpty — Возвращает true, если стек пуст
+# Top — Возвращает верхний элемент, не удаляя его из стека
+
 class Node:
     """Класс для узла стека"""
 
@@ -36,4 +41,3 @@ class Stack:
         remove_last = self.top
         self.top = self.top.next_node
         return remove_last.data
-
