@@ -36,3 +36,4 @@ class Stack:
         remove_last = self.top
         self.top = self.top.next_node
         return remove_last.data
+
