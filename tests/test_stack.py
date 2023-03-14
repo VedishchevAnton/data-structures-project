@@ -32,6 +32,10 @@ class TestStack(unittest.TestCase):
         self.assertEqual(stack.top.data, "test")
         stack.pop()
 
+    def test__str__(self):
+        stack = Stack()
+        self.assertIsNone(stack.top)
+
 
 
 
