@@ -41,3 +41,7 @@ class Stack:
         remove_last = self.top
         self.top = self.top.next_node
         return remove_last.data
+
+    def __str__(self):
+        return str(self.top.data)
+
