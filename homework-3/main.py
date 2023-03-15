@@ -12,11 +12,11 @@ if __name__ == '__main__':
     queue.enqueue('data3')
 
     # Проверяем очередность хранения данных
-    assert queue.head.data == 'data1'
+    assert queue.head.data == 'data1'  # head
     print(queue.head.data)
     assert queue.head.next_node.data == 'data2'
     print(queue.head.next_node.data)
-    assert queue.tail.data == 'data3'
+    assert queue.tail.data == 'data3'  # tail
     print(queue.tail.data)
     # assert queue.tail.next_node is None
     # print(queue.tail.next_node.data)  # AttributeError: 'NoneType' object has no attribute 'data'
