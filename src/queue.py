@@ -34,6 +34,7 @@ class Queue:
         while node.next_node:  # пока существует следующий элемент
             node = node.next_node  # постоянно присваиваем +1 элемент
         node.next_node = Node(data)
+        self.tail = node.next_node  # присваиваем последний элемент хвосту
         return data
 
     def dequeue(self):
