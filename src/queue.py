@@ -26,24 +26,28 @@ class Queue:
 
         :param data: данные, которые будут добавлены в очередь
         """
+        node = Node(data)
         if not self.head:  # отрабатывает тогда, если не существует первого элемента
-            self.head = Node(data)  # создаем первый элемент
-            self.tail = self.head  # так как это первый элемент, он равен и началу и концу цепи
-            return data  # возврат элемента для окончания функции
-        node = self.head  # если существует первый элемент
-        while node.next_node:  # пока существует следующий элемент
-            node = node.next_node  # постоянно присваиваем +1 элемент
-        node.next_node = Node(data)
-        self.tail = node.next_node  # присваиваем последний элемент хвосту
-        return data
+            self.head = node  # создаем первый элемент
+            self.tail = node  # так как это первый элемент, он равен и началу и концу цепи
+            # return data возврат элемента для окончания функции
+        else:
+            self.tail.next_node = node
+            self.tail = node
+        # node = self.head  # если существует первый элемент
+        # while node.next_node:  # пока существует следующий элемент
+        #     node = node.next_node  # постоянно присваиваем +1 элемент
+        # node.next_node = Node(data)
+        # self.tail = node.next_node  # присваиваем последний элемент хвосту
+        # return data
 
-    def dequeue(self):
-        """
-        Метод для удаления элемента из очереди и его возвращения
-
-        :return: данные удаленного элемента
-        """
-        pass
+    # def dequeue(self):
+    #     """
+    #     Метод для удаления элемента из очереди и его возвращения
+    #
+    #     :return: данные удаленного элемента
+    #     """
+    #     pass
 
     def __str__(self):
         """
