@@ -34,7 +34,7 @@ class TestStack(unittest.TestCase):
 
     def test__str__(self):
         stack = Stack()
-        self.assertIsNone(stack.top)
+        self.assertEqual(stack.top, None)
 
 
 
