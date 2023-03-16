@@ -1,1 +1,28 @@
 """Здесь надо написать тесты с использованием unittest для модуля queue."""
+from src.queue import Queue, Node
+import unittest
+
+
+class QueueTest(unittest.TestCase):
+
+    def test_init(self):
+        """
+        Тест конструктора класса Queue
+        """
+        queue = Queue()
+        self.assertEqual(queue.head, None)  # проверка начала очереди
+        self.assertEqual(queue.tail, None)  # проверка конца очереди
+
+    def test_enqueue(self):
+        """
+        Тест метода для добавления элемента в очередь
+        """
+        queue = Queue()
+        queue.enqueue('test')
+        self.assertEqual(queue.head.data, 'test')  # тестирование добавления данных
+        self.assertEqual(queue.tail.data, 'test')
+
+        queue.enqueue('test_1')  # тестирование следующего узла после головы
+        self.assertEqual(queue.head.next_node.data, 'test_1')
+        self.assertEqual(queue.tail.data, 'test_1')
+        self.assertEqual(queue.tail.next_node, None)  # тест в конце ничего не прицепилось дополнительно
