@@ -35,4 +35,3 @@ class QueueTest(unittest.TestCase):
         queue.enqueue('test')
         self.assertEqual(queue.head.data, 'test')
         queue.dequeue()
-
