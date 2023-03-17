@@ -26,3 +26,13 @@ class QueueTest(unittest.TestCase):
         self.assertEqual(queue.head.next_node.data, 'test_1')
         self.assertEqual(queue.tail.data, 'test_1')
         self.assertEqual(queue.tail.next_node, None)  # тест в конце ничего не прицепилось дополнительно
+
+    def test_dequeue(self):
+        """
+        Тест метода для удаления элемента из очереди с начала
+        """
+        queue = Queue()
+        queue.enqueue('test')
+        self.assertEqual(queue.head.data, 'test')
+        queue.dequeue()
+
