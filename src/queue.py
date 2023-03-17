@@ -20,7 +20,7 @@ class Queue:
         self.head = None
         self.tail = None
 
-    def enqueue(self, data) -> str:
+    def enqueue(self, data):
         """
         Метод для добавления элемента в очередь
 
@@ -33,6 +33,13 @@ class Queue:
         else:
             self.tail.next_node = node
             self.tail = node
+
+    def dequeue(self):
+        """
+        Метод для удаления элемента из очереди. Возвращает данные удаленного элемента
+        :return: данные удаленного элемента
+        """
+        pass
 
     def __str__(self):
         """
