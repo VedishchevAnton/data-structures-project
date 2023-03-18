@@ -1,6 +1,7 @@
 """Здесь надо написать тесты с использованием unittest для модуля queue."""
 from src.queue import Queue, Node
 import unittest
+from types import NoneType
 
 
 class QueueTest(unittest.TestCase):
@@ -35,3 +36,10 @@ class QueueTest(unittest.TestCase):
         queue.enqueue('test')
         self.assertEqual(queue.head.data, 'test')
         queue.dequeue()
+        self.assertIsInstance(queue.head, NoneType)
+        with self.assertRaises(AttributeError):
+            data = queue.head.data
+
+
+
+
