@@ -21,5 +21,11 @@ class LinkedListTest(unittest.TestCase):
         linked_list = LinkedList()
         linked_list.insert_at_end({'id': 2})
 
+    def test__str__(self):
+        linked_list = LinkedList()
+        linked_list.__str__()
+
+
+
 
 
