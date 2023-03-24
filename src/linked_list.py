@@ -29,7 +29,13 @@ class LinkedList:
 
     def insert_at_end(self, data: dict) -> None:
         """Принимает данные (словарь) и добавляет узел с этими данными в конец связанного списка"""
-        pass
+        node = Node(data)
+        if not self.head:
+            self.head = node
+            self.tail = node
+        else:
+            self.tail.next_node = node
+            self.tail = node
 
     def __str__(self) -> str:
         """Вывод данных односвязного списка в строковом представлении"""
