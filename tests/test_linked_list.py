@@ -12,3 +12,9 @@ class LinkedListTest(unittest.TestCase):
         linked_list = LinkedList()
         self.assertEqual(linked_list.head, None)  # проверка начала очереди
         self.assertEqual(linked_list.tail, None)  # проверка конца очереди
+
+    def test_insert_beginning(self):
+        linked_list = LinkedList()
+        linked_list.insert_beginning({'id': 1})
+
+
