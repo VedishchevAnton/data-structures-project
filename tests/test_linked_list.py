@@ -17,4 +17,9 @@ class LinkedListTest(unittest.TestCase):
         linked_list = LinkedList()
         linked_list.insert_beginning({'id': 1})
 
+    def test_insert_at_end(self):
+        linked_list = LinkedList()
+        linked_list.insert_at_end({'id': 2})
+
+
 
