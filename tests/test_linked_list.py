@@ -33,6 +33,6 @@ class LinkedListTest(unittest.TestCase):
         linked_list = LinkedList()
         self.assertEqual(str(linked_list), 'None')
         linked_list.insert_beginning({'id_test': 1})
-        self.assertEqual(str(linked_list), f"{'id_test': 1} -> None")
+        self.assertEqual(str(linked_list), " {'id_test': 1} -> None")
         linked_list.insert_beginning({'id_test': 2})
-        self.assertEqual(str(linked_list), f"{'id_test': 2} -> {'id_test': 1} -> None")
+        self.assertEqual(str(linked_list), " {'id_test': 2} -> {'id_test': 1} -> None")
