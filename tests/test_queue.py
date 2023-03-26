@@ -33,12 +33,19 @@ class QueueTest(unittest.TestCase):
         Тест метода для удаления элемента из очереди с начала
         """
         queue = Queue()
+        self.assertTrue(queue.head, None)
         queue.enqueue('test')
         self.assertEqual(queue.head.data, 'test')
         queue.dequeue()
         self.assertIsInstance(queue.head, NoneType)
         with self.assertRaises(AttributeError):
             data = queue.head.data
+
+    def test_str(self):
+        queue = Queue()
+        self.assertEqual(str(queue), "")
+        queue.enqueue("test")
+        self.assertEqual(str(queue), "test")
 
 
 
