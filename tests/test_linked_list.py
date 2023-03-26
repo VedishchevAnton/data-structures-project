@@ -23,13 +23,12 @@ class LinkedListTest(unittest.TestCase):
 
     def test_insert_at_end(self):
         linked_list = LinkedList()
-        linked_list.insert_at_end({'id': 2})
+        self.assertIsNone(linked_list.head)
+        linked_list.insert_at_end({'id_test': 1})
+        self.assertEqual(linked_list.tail.data, {'id_test': 1})
+        linked_list.insert_at_end({'id_test': 2})
+        self.assertEqual(linked_list.tail.data, {'id_test': 2})
 
     def test__str__(self):
         linked_list = LinkedList()
         linked_list.__str__()
-
-
-
-
-
