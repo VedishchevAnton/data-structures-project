@@ -1,3 +1,6 @@
+from typing import Any
+
+
 class Node:
     """Класс для узла очереди"""
 
@@ -61,16 +64,28 @@ class LinkedList:
             self.head = self.head.next_node
         return lst
 
-    def get_data_by_id(self, id_value) -> None:
-        new_node = self.head
-        try:
-            while new_node:
-                if new_node.data['id'] == id_value:
-                    return new_node.data
-                new_node = new_node.next
-        except TypeError:
-            print('Ошибка: неправильный формат данных в ноде')
-            return None
+    def get_data_by_id(self, id_value) -> Node:
+        """
+        Метод возвращает первый найденный словарь с ключом 'id', значение которого равно переданному в метод значению.
+        """
+        lst = self.to_list()
+        for node in lst:
+            try:
+                if node['id'] == id_value:
+                    return node
+            except TypeError:
+                print('Данные не являются словарем или в словаре нет id')
 
-        print('Не найден элемент с таким id')
-        return None
+
+
+
+
+        # node = self.head
+        # try:
+        #     while node is not None:
+        #         if node.data['id'] == id_value:
+        #             return node.data
+        #         node = self.head.next_node
+        # except TypeError:
+        #     print('Данные не являются словарем или в словаре нет id')
+        # return node
