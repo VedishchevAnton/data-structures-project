@@ -76,16 +76,3 @@ class LinkedList:
             except TypeError:
                 print('Данные не являются словарем или в словаре нет id')
 
-
-
-
-
-        # node = self.head
-        # try:
-        #     while node is not None:
-        #         if node.data['id'] == id_value:
-        #             return node.data
-        #         node = self.head.next_node
-        # except TypeError:
-        #     print('Данные не являются словарем или в словаре нет id')
-        # return node
