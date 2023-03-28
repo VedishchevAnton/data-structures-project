@@ -50,3 +50,27 @@ class LinkedList:
 
         ll_string += ' None'
         return ll_string
+
+    def to_list(self) -> list:
+        """
+        Метод возвращает список с данными, содержащимися в односвязном списке
+        """
+        lst = []
+        while self.head is not None:
+            lst.append(self.head.data)
+            self.head = self.head.next_node
+        return lst
+
+    def get_data_by_id(self, id_value) -> None:
+        new_node = self.head
+        try:
+            while new_node:
+                if new_node.data['id'] == id_value:
+                    return new_node.data
+                new_node = new_node.next
+        except TypeError:
+            print('Ошибка: неправильный формат данных в ноде')
+            return None
+
+        print('Не найден элемент с таким id')
+        return None
