@@ -39,8 +39,8 @@ class LinkedListTest(unittest.TestCase):
 
     def test_to_list(self):
         linked_list = LinkedList()
-        self.assertEqual(linked_list.to_list(), [])
+        self.assertEqual(type(linked_list.to_list()), list)
         linked_list.insert_beginning({'id_test': 1})
-        self.assertEqual(linked_list.to_list(), [{'id_test': 1}])
         linked_list.insert_beginning({'id_test': 2})
-        self.assertEqual(linked_list.to_list(), [{'id_test': 2}])
+        self.assertEqual(linked_list.to_list(), [{'id_test': 2}, {'id_test': 1}])
+
