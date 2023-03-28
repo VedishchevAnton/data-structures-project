@@ -44,3 +44,25 @@ class LinkedListTest(unittest.TestCase):
         linked_list.insert_beginning({'id_test': 2})
         self.assertEqual(linked_list.to_list(), [{'id_test': 2}, {'id_test': 1}])
 
+    def test_get_data_by_id_1(self):
+        """"
+        Проверка поиска по id
+        """
+        linked_list = LinkedList()
+        linked_list.insert_beginning({'id': 1})
+        linked_list.insert_beginning({'id': 2})
+        self.assertEqual(linked_list.get_data_by_id(1), {'id': 1})
+
+    def test_get_data_2(self):
+        """
+        Проверка исключения
+        """
+        with self.assertRaises(Exception) as exc:
+            linked_list = LinkedList()
+            linked_list.insert_beginning({'id': 1})
+            linked_list.insert_at_end('абракадабра')
+            linked_list.insert_at_end({'id': 3})
+            linked_list.get_data_by_id(2)
+            self.assertEqual('Данные не являются словарем или в словаре нет id', exc.exception)
+
+
