@@ -59,9 +59,12 @@ class LinkedList:
         Метод возвращает список с данными, содержащимися в односвязном списке
         """
         lst = []
-        while self.head is not None:
-            lst.append(self.head.data)
-            self.head = self.head.next_node
+        current = self.head
+
+        while current is not None:
+            lst.append(current.data)
+            current = current.next_node
+
         return lst
 
     def get_data_by_id(self, id_value) -> Node:
